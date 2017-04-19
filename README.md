@@ -26,3 +26,39 @@ Before running the tests make sure you are serving the app via `ng serve`.
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+### How to install add jest
+yarn add --dev jest jest-preset-angular @types/jest
+
+Add the following to package.json
+```json
+"jest": {
+  "preset": "jest-preset-angular",
+  "setupTestFrameworkScriptFile": "<rootDir>/src/setupJest.ts"
+}
+```
+Create the file `setupJest.ts` in the `/src` directory
+```typescript
+import 'jest-preset-angular';
+import './jestGlobalMocks';
+```
+
+add the following to your `package.json` in the `scripts` section:
+```json
+"test": "jest",
+"test:watch": "jest --watch",
+"test:ci": "jest --runInBand",
+```
+
+To run type on the command line: 
+```
+yarn test
+yarn test:watch
+yarn test:ci
+```
+
+## Using Angular Cli
+
+ng g service services/countryDataStore
+ng g service services/countryExternalService

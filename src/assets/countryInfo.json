@@ -939,8 +939,7 @@
   },
   {
     "Name": "United Kingdom",
-    "Code": "GB",
-    "PathIds": ["gb"]
+    "Code": "GB"
   },
   {
     "Name": "United States",

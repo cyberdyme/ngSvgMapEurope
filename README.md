@@ -59,6 +59,7 @@ yarn test:ci
 ```
 
 ## Using Angular Cli
-
+```
 ng g service services/countryDataStore
 ng g service services/countryExternalService
+```

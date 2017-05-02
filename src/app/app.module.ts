@@ -5,6 +5,9 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import {SharedServiceModule} from './services/shared-service.module';
+import {StoreModule} from '@ngrx/store';
+import {INITIAL_APPLICATION_STATE} from './store/ApplicationState';
+import {storeReducer} from './store/reducers/storeReducer';
 
 @NgModule({
   declarations: [
@@ -14,7 +17,8 @@ import {SharedServiceModule} from './services/shared-service.module';
     BrowserModule,
     FormsModule,
     HttpModule,
-    SharedServiceModule.forRoot()
+    SharedServiceModule.forRoot(),
+    StoreModule.provideStore({ storeReducer }, INITIAL_APPLICATION_STATE)
   ],
   providers: [],
   bootstrap: [AppComponent]

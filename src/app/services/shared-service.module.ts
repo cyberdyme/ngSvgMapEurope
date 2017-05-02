@@ -1,6 +1,5 @@
 import {ModuleWithProviders, NgModule} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {CountryDataStoreService} from './country-data-store.service';
 import {CountryExternalService} from './country-external.service';
 
 @NgModule({
@@ -13,7 +12,7 @@ export class SharedServiceModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: SharedServiceModule,
-      providers: [CountryDataStoreService, CountryExternalService]
+      providers: [CountryExternalService]
     };
   }
 }

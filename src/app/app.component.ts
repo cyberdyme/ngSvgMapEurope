@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Store} from '@ngrx/store';
 import {ApplicationState} from './store/ApplicationState';
-import {LoadAllPathInfoAction} from './store/actions/LoadAllCountryInfoAction';
+import {LoadAllMapItemsAction} from './store/actions/LoadAllMapItemsAction';
 import {CountryExternalService} from './services/country-external.service';
 import {Subscription} from 'rxjs/Subscription';
 
@@ -20,7 +20,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.subscription = this.service.getAllPathInfo().subscribe(x => {
-      this.store.dispatch(new LoadAllPathInfoAction(x));
+      this.store.dispatch(new LoadAllMapItemsAction(x));
     });
   }
 

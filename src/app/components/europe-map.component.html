@@ -1,0 +1,59 @@
+<div>
+  <svg #table1 xmlns="http://www.w3.org/2000/svg" width="680" height="520"
+       (click)="mouseClick($event)"
+       (mouseenter)="mouseOver($event)" (mouseleave)="mouseOut($event)"
+       [attr.viewBox]="viewBox"
+       version="1.0" id="svgMapOfEurope">
+    <title id="title4">Countries of Europe</title>
+    <defs id="defs8">
+      <style type="text/css" id="style10">
+        /* Default Definitions, can be overridden with the individual style selectors */
+        * {
+          fill: none;
+        }
+
+        g.nationGroup path {
+          fill: inherit;
+          stroke: inherit
+        }
+
+        g.nationGroup, path {
+          fill: #C0C0C0;
+          stroke: white;
+          stroke-width: 8;
+        }
+
+        /* stroke-width was originally at around 4px, but this makes it difficult to see when the image is smaller */
+        /* Geographic Features */
+        #ocean {
+          opacity: 1;
+          fill: none;
+          fill-opacity: 1
+        }
+
+        #lakes {
+          opacity: 0.4;
+          fill: white;
+          fill-opacity: 1;
+          stroke: none;
+          stroke-width: 8
+        }
+
+        svg:hover {
+          fill: #fce57e;
+        }
+      </style>
+    </defs>
+    <rect y="162.74684" x="-340.6582" height="7934.9712" width="12386.153" id="ocean"/>
+    <path *ngFor="let country of (pathsListForEurope$ | async)"
+          [attr.id]="country.id"
+          [attr.d]="country.data" />
+
+    <g transform="matrix(1.43317, 0, 0, 1.43317, -2435.49, -1086.58)" class="nationGroup">
+      <path *ngFor="let country of (pathsListForRussia$ | async)"
+            [attr.id]="country.id"
+            [attr.d]="country.data" />
+    </g>
+
+  </svg>
+</div>

@@ -7,7 +7,7 @@ import {Actions, Effect} from '@ngrx/effects';
 import {Injectable} from '@angular/core';
 import {CountryExternalService} from '../../services/country-external.service';
 import {Observable} from 'rxjs/Observable';
-import {LOAD_MAP_ITEM_INFO_ACTION, LoadAllMapItemsAction} from '../actions/LoadAllMapItemsAction';
+import {INITIAL_SETUP_ACTION, LOAD_MAP_ITEM_INFO_ACTION, LoadAllMapItemsAction} from '../actions/LoadAllMapItemsAction';
 import 'rxjs/add/operator/switchMap';
 import {Action} from '@ngrx/store';
 import {IMapItem} from '../../model/IMapItem';
@@ -18,7 +18,8 @@ export class LoadCountriesEffect {
   }
 
   @Effect() newMessages$: Observable<Action> = this.actions$
-    .ofType(LOAD_MAP_ITEM_INFO_ACTION)
+    .ofType(INITIAL_SETUP_ACTION)
     .switchMap(() => this.countryServices.getAllPathInfo())
+    .do(x => "effects" + console.log(x))
     .map((x: IMapItem[]) => new LoadAllMapItemsAction(x));
 }

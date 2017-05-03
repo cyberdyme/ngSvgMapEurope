@@ -28,6 +28,7 @@ export class EuropeMapComponent implements OnInit {
       return [];
     }
 
+    debugger;
     return _.values<IMapItem>(state.dataStore.countries);
   }
 

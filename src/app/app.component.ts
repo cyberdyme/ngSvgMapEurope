@@ -1,9 +1,7 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Store} from '@ngrx/store';
 import {ApplicationState} from './store/ApplicationState';
-import {LoadAllMapItemsAction} from './store/actions/LoadAllMapItemsAction';
-import {CountryExternalService} from './services/country-external.service';
-import {Subscription} from 'rxjs/Subscription';
+import {InitialSetUpAction} from "./store/actions/LoadAllMapItemsAction";
 
 @Component({
   selector: 'app-root',
@@ -13,10 +11,11 @@ import {Subscription} from 'rxjs/Subscription';
 export class AppComponent implements OnInit  {
   title = 'app works!';
 
-  constructor(private store: Store<ApplicationState>, private service: CountryExternalService) {
+  constructor(private store: Store<ApplicationState>) {
     this.store.subscribe(x => console.log(" ctor = " + x));
   }
 
   ngOnInit() {
+    this.store.dispatch(new InitialSetUpAction(null));
   }
 }

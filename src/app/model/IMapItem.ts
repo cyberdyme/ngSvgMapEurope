@@ -1,5 +1,5 @@
 export interface IMapItem {
-  id: number;
+  id: string;
   data: string;
   name: string;
 };

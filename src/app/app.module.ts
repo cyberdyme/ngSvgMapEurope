@@ -8,17 +8,19 @@ import {SharedServiceModule} from './services/shared-service.module';
 import {StoreModule} from '@ngrx/store';
 import {INITIAL_APPLICATION_STATE} from './store/ApplicationState';
 import {storeReducer} from './store/reducers/storeReducer';
+import { EuropeMapComponent } from './components/europe-map.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    EuropeMapComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     SharedServiceModule.forRoot(),
-    StoreModule.provideStore({ storeReducer }, INITIAL_APPLICATION_STATE)
+    StoreModule.provideStore(storeReducer, INITIAL_APPLICATION_STATE)
   ],
   providers: [],
   bootstrap: [AppComponent]

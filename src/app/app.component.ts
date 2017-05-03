@@ -15,7 +15,7 @@ export class AppComponent implements OnInit, OnDestroy {
   subscription: Subscription;
 
   constructor(private store: Store<ApplicationState>, private service: CountryExternalService) {
-    this.store.subscribe(x => console.log("ctor = " + x));
+    this.store.subscribe(x => console.log(" ctor = " + x));
   }
 
   ngOnInit() {

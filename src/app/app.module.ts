@@ -8,14 +8,16 @@ import {SharedServiceModule} from './services/shared-service.module';
 import {StoreModule} from '@ngrx/store';
 import {INITIAL_APPLICATION_STATE} from './store/ApplicationState';
 import {storeReducer} from './store/reducers/storeReducer';
-import {EuropeMapComponent} from './components/europe-map.component';
 import {EffectsModule} from '@ngrx/effects';
 import {LoadCountriesEffect} from './store/effects/loadcountries.effect';
+import { MapContainerComponent } from './components/map-container.component';
+import { MapComponent } from './components/map.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EuropeMapComponent
+    MapContainerComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,

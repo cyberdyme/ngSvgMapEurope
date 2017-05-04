@@ -1,4 +1,4 @@
-import {IMapItem} from '../model/IMapItem';
+import {IMapItem} from '../model/iMapItem';
 
 export interface DataStore {
   countries: {[key: number]: IMapItem};

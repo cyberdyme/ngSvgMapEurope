@@ -2,8 +2,8 @@
  * Created by girishthanki on 02/05/2017.
  */
 
-import {INITIAL_UI_STATE, UiState} from './UiState';
-import {DataStore, INITIAL_DATA_STORE} from './DataStore';
+import {INITIAL_UI_STATE, UiState} from './uiState';
+import {DataStore, INITIAL_DATA_STORE} from './dataStore';
 
 
 export interface ApplicationState {

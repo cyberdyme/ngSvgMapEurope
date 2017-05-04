@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {IMapItem} from "../model/IMapItem";
+import {IMapItem} from '../model/iMapItem';
 
 @Component({
   selector: 'app-map',

@@ -6,18 +6,21 @@ import {HttpModule} from '@angular/http';
 import {AppComponent} from './app.component';
 import {SharedServiceModule} from './services/shared-service.module';
 import {StoreModule} from '@ngrx/store';
-import {INITIAL_APPLICATION_STATE} from './store/ApplicationState';
+import {INITIAL_APPLICATION_STATE} from './store/applicationState';
 import {storeReducer} from './store/reducers/storeReducer';
 import {EffectsModule} from '@ngrx/effects';
 import {LoadCountriesEffect} from './store/effects/loadcountries.effect';
 import { MapContainerComponent } from './components/map-container.component';
 import { MapComponent } from './components/map.component';
+import { HeaderComponent } from './components/header.component';
+import {PanelModule, TabViewModule} from 'primeng/primeng';
 
 @NgModule({
   declarations: [
     AppComponent,
     MapContainerComponent,
-    MapComponent
+    MapComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -26,6 +29,8 @@ import { MapComponent } from './components/map.component';
     SharedServiceModule.forRoot(),
     StoreModule.provideStore(storeReducer, INITIAL_APPLICATION_STATE),
     EffectsModule.run(LoadCountriesEffect),
+    TabViewModule,
+    PanelModule
   ],
   providers: [],
   bootstrap: [AppComponent]

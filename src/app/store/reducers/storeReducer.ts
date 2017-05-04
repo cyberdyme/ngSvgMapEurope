@@ -1,4 +1,4 @@
-import {ApplicationState, INITIAL_APPLICATION_STATE} from '../ApplicationState';
+import {ApplicationState, INITIAL_APPLICATION_STATE} from '../applicationState';
 import {Action} from '@ngrx/store';
 import {uiStateReducer} from './uiStateReducer';
 import {dataStoreReducer} from './dataStoreReducer';

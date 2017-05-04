@@ -7,7 +7,7 @@ import 'rxjs/add/operator/mergeMap';
 import 'rxjs/add/operator/first';
 import 'rxjs/add/operator/publishLast';
 import 'rxjs/add/operator/do';
-import {IMapItem} from '../model/IMapItem';
+import {IMapItem} from '../model/iMapItem';
 
 @Injectable()
 export class CountryExternalService {

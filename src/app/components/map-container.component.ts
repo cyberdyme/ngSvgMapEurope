@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {IMapItem} from '../model/IMapItem';
-import {ApplicationState} from '../store/ApplicationState';
+import {IMapItem} from '../model/iMapItem';
+import {ApplicationState} from '../store/applicationState';
 import {Store} from '@ngrx/store';
 import {Observable} from 'rxjs/Observable';
 import * as  _ from 'lodash';

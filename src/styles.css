@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0px;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #20272a;
+  font-family: 'Roboto', "Trebuchet MS", Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  color: #404C51;
+  -webkit-font-smoothing: antialiased;
+  font-size: 1em;
+  display: block;
+}

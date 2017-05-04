@@ -1,0 +1,9 @@
+#topbar {
+  background-color: #1976D2;
+  box-sizing: border-box;
+  display: block;
+  border-bottom: solid 1px #dde3e6;
+  padding: 15px;
+  overflow: hidden;
+  height: 75px;
+}

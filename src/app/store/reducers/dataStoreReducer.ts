@@ -1,6 +1,6 @@
-import {DataStore} from '../DataStore';
-import {IMapItem} from '../../model/IMapItem';
-import {LOAD_MAP_ITEM_INFO_ACTION} from '../actions/LoadAllMapItemsAction';
+import {DataStore} from '../dataStore';
+import {IMapItem} from '../../model/iMapItem';
+import {LOAD_MAP_ITEM_INFO_ACTION} from '../actions/loadAllMapItemsAction';
 import {Action} from '@ngrx/store';
 import * as _ from 'lodash';
 

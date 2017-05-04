@@ -20,4 +20,12 @@ export class MapComponent implements OnInit {
   ngOnInit() {
   }
 
+  mouseOver(event) {
+  }
+
+  mouseOut(event) {
+  }
+
+  mouseClick(event) {
+  }
 }

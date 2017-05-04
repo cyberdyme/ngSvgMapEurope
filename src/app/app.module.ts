@@ -14,6 +14,7 @@ import { MapContainerComponent } from './components/map-container.component';
 import { MapComponent } from './components/map.component';
 import { HeaderComponent } from './components/header.component';
 import {PanelModule, TabViewModule} from 'primeng/primeng';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import {PanelModule, TabViewModule} from 'primeng/primeng';
     SharedServiceModule.forRoot(),
     StoreModule.provideStore(storeReducer, INITIAL_APPLICATION_STATE),
     EffectsModule.run(LoadCountriesEffect),
+    BrowserAnimationsModule,
     TabViewModule,
     PanelModule
   ],

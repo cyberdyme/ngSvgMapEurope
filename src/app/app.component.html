@@ -1,7 +1,50 @@
+<!--
 <div id="outbox_div">
-  <app-header></app-header>
+  <div class="ui-g">
+    <div class="ui-g-6 ui-g-nopad">
+    </div>
+    <div class="ui-g-6">
+      <p-panel [toggleable]="'true'">
+        <p-header>
+          Map Of Europe
+        </p-header>
+        <app-map-container></app-map-container>
+      </p-panel>
+    </div>
+  </div>
+ </div>
+-->
 
-  <p-panel header="Map Of Europe" [toggleable]="true">
-    <app-map-container></app-map-container>
-  </p-panel>
+
+<div id="header"><app-header></app-header></div>
+<div id="container">
+
+  <div id="center" class="column">
+    <div class="ui-g">
+      <div class="ui-g-6 ui-g-nopad">
+      </div>
+      <div class="ui-g-6">
+        <p-panel [toggleable]="'true'">
+          <p-header>
+            Map Of Europe
+          </p-header>
+          <app-map-container></app-map-container>
+        </p-panel>
+      </div>
+    </div>
+  </div>
+<!--
+  <div id="left" class="column">
+    <h2>This is the left sidebar.</h2>
+    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla.</p>
+  </div>
+
+  <div id="right" class="column">
+    <h2>This is the right sidebar.</h2>
+    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+  </div>-->
+</div>
+
+<div id="footer-wrapper">
+  <div id="footer">This is the footer.</div>
 </div>

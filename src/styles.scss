@@ -18,9 +18,10 @@ body {
 
 /*** The Essential Code ***/
 
+$leftiieWidth: 135px;
 $leftFullWidth: 200px;
 $leftWidth: 180px;
-$leftWidthWithPadding: 240px;
+$leftWidthWithPadding: ($leftWidth + 60px);
 $rightFullWidth: 190px;
 $rightWidth: 130px;
 
@@ -66,7 +67,7 @@ body {
 
 /*** IE Fix ***/
 * html #left {
-  left: 150px;              /* RC fullwidth */
+  left: $leftiieWidth;       /* RC fullwidth */
 }
 
 /*** Equal-height Columns ***/

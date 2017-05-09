@@ -4,6 +4,6 @@ path:hover {
 
 .isSelected
 {
-  stroke: purple;
+  stroke: black;
   fill: purple;
 }

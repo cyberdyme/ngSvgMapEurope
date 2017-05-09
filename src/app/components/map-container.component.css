@@ -1,5 +1,6 @@
 
 #map_container_outbox_div {
+  position:relative;
   border: 3px solid grey;
   border-radius:2px;
   height: 100%;

@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {IMapItem} from '../model/iMapItem';
-import {ApplicationState} from "../store/applicationState";
-import {Store} from "@ngrx/store";
+import {ApplicationState} from '../store/applicationState';
+import {Store} from '@ngrx/store';
 
 @Component({
   selector: 'app-map',
@@ -23,22 +23,23 @@ export class MapComponent implements OnInit {
   @Output()
   countrySelected = new EventEmitter<string>();
 
+  @Output()
+  countryMouseOverInfo = new EventEmitter<string>();
+
   constructor() { }
 
   ngOnInit() {
   }
 
-  mouseOver(event) {
+  mouseOver(country: any) {
+    this.countryMouseOverInfo.next(country.currentTarget.id);
   }
 
-  mouseOut(event) {
+  mouseLeave() {
+    this.countryMouseOverInfo.next(undefined);
   }
 
   mouseClick(country: any) {
-    if(country.currentTarget.localName === 'path') {
-      //console.log('node name =' + country.currentTarget.localName);
-      //console.log('Path clicked ' + country.currentTarget.id);
-      this.countrySelected.next(country.currentTarget.id);
-    }
+    this.countrySelected.next(country.currentTarget.id);
   }
 }

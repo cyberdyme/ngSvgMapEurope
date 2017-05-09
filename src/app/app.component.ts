@@ -12,7 +12,7 @@ export class AppComponent implements OnInit  {
   title = 'app works!';
 
   constructor(private store: Store<ApplicationState>) {
-    this.store.subscribe(x => console.log(' ctor = ' + x));
+    // this.store.subscribe(x => console.log(' ctor = ' + x));
   }
 
   ngOnInit() {

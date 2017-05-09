@@ -28,8 +28,6 @@ export class SelectCountryInfoComponent implements OnInit {
     });
   }
 
-
-
   getCountries(state: ApplicationState) {
     return _.orderBy(_.values(state.dataStore.countries)
       .filter(z => z.name && z.name.length > 0)

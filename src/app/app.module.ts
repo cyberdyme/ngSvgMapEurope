@@ -16,6 +16,7 @@ import { HeaderComponent } from './components/header.component';
 import {DropdownModule, PanelModule, TabViewModule} from 'primeng/primeng';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { SelectCountryInfoComponent } from './components/select-country-info.component';
+import { CurrentSelectionComponent } from './components/current-selection.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { SelectCountryInfoComponent } from './components/select-country-info.com
     MapContainerComponent,
     MapComponent,
     HeaderComponent,
-    SelectCountryInfoComponent
+    SelectCountryInfoComponent,
+    CurrentSelectionComponent
   ],
   imports: [
     BrowserModule,

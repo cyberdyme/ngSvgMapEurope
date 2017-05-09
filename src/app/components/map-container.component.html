@@ -1,7 +1,9 @@
+<app-current-selection [selection]="(hoverOverCountry$ | async)?.name"></app-current-selection>
 <div id="map_container_outbox_div">
   <app-map [mapItemsForEurope]="(pathsListForEurope$ | async)"
            [mapItemsForRussia]="(pathsListForRussia$ | async)"
            [selectedCountry]="(selectedCountry$ | async)"
-           (countrySelected)="onCountrySelection($event)">
+           (countrySelected)="onCountrySelection($event)"
+           (countryMouseOverInfo)="onCountryMouseOverInfo($event)">
   </app-map>
 </div>

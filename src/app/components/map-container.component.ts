@@ -4,7 +4,7 @@ import {ApplicationState} from '../store/applicationState';
 import {Store} from '@ngrx/store';
 import {Observable} from 'rxjs/Observable';
 import * as  _ from 'lodash';
-import {SelectedCountryChangedViaMapAction} from "../store/actions/loadAllMapItemsAction";
+import {CountryMouseOverAction, SelectedCountryChangedViaMapAction} from '../store/actions/loadAllMapItemsAction';
 
 @Component({
   selector: 'app-map-container',
@@ -15,6 +15,7 @@ export class MapContainerComponent implements OnInit {
   pathsListForEurope$: Observable<IMapItem[]>;
   pathsListForRussia$: Observable<IMapItem[]>;
   selectedCountry$: Observable<string>;
+  hoverOverCountry$: Observable<IMapItem>;
 
   constructor(private store: Store<ApplicationState>) {
   }
@@ -29,10 +30,15 @@ export class MapContainerComponent implements OnInit {
   ngOnInit() {
     this.pathsListForEurope$ = this.store.select(x => _.filter(this.getCounteries(x), (y: IMapItem) => y.id !== 'ru'));
     this.pathsListForRussia$ = this.store.select(x => _.filter(this.getCounteries(x), (y: IMapItem) => y.id === 'ru'));
-    this.selectedCountry$ = this.store.select(x => x.uiState.selectedCountry).do(y => console.log('stream' + y));
+    this.selectedCountry$ = this.store.select(x => x.uiState.selectedCountry);
+    this.hoverOverCountry$ = this.store.select(x => x.dataStore.countries[x.uiState.hoverOverCountry]);
   }
 
   onCountrySelection(country: string) {
     this.store.dispatch(new SelectedCountryChangedViaMapAction(country));
+  }
+
+  onCountryMouseOverInfo(country: string) {
+    this.store.dispatch(new CountryMouseOverAction(country));
   }
 }

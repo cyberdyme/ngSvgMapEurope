@@ -34,3 +34,10 @@ export class SelectedCountryChangedViaMapAction implements Action {
   constructor(public payload?: string) {
   }
 }
+
+export const COUNTRY_MOUSE_OVER_ACTION = 'COUNTRY_MOUSE_OVER_ACTION';
+export class CountryMouseOverAction implements Action {
+  readonly type = COUNTRY_MOUSE_OVER_ACTION;
+  constructor(public payload?: string) {
+  }
+}

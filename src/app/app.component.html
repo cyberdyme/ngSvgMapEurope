@@ -18,10 +18,15 @@
 
 <div id="header"><app-header></app-header></div>
 <div id="container">
-
   <div id="center" class="column">
     <div class="ui-g">
-      <div class="ui-g-6 ui-g-nopad">
+      <div class="ui-g-6">
+        <p-panel>
+          <p-header>
+            Country Info
+          </p-header>
+          <app-select-country-info></app-select-country-info>
+        </p-panel>
       </div>
       <div class="ui-g-6">
         <p-panel [toggleable]="'true'">

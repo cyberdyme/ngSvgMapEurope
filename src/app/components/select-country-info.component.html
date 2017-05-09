@@ -1,0 +1,12 @@
+<div id="container_outbox_div">
+  <p-dropdown [options]="(countries$ | async)" [(ngModel)]="selectedCity"
+              [style]="{'width': '240px', 'color': 'blue'}" (onChange)="selectionChanged()">
+<!--
+    <ng-template let-itemRef pTemplate="item">
+      <div class="ui-helper-clearfix" style="position: relative;height: 25px;">
+        <div style="font-size:14px;margin-top:4px" [ngClass]="{'isEmpty': 'itemRef.label === selectedCity'}">{{itemRef.label}}</div>
+      </div>
+    </ng-template>
+-->
+  </p-dropdown>
+</div>

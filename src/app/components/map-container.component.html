@@ -1,4 +1,7 @@
 <div id="map_container_outbox_div">
   <app-map [mapItemsForEurope]="(pathsListForEurope$ | async)"
-           [mapItemsForRussia]="(pathsListForRussia$ | async)"></app-map>
+           [mapItemsForRussia]="(pathsListForRussia$ | async)"
+           [selectedCountry]="(selectedCountry$ | async)"
+           (countrySelected)="onCountrySelection($event)">
+  </app-map>
 </div>

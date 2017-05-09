@@ -20,3 +20,17 @@ export class InitialSetUpAction implements Action {
   constructor(public payload?: any) {
   }
 }
+
+export const SELECTED_COUNTRY_CHANGED_VIA_DROPDOWN_ACTION = 'SELECTED_COUNTRY_CHANGED_VIA_DROPDOWN_ACTION';
+export class SelectedCountryChangedViaDropDownAction implements Action {
+  readonly type = SELECTED_COUNTRY_CHANGED_VIA_DROPDOWN_ACTION;
+  constructor(public payload?: string) {
+  }
+}
+
+export const SELECTED_COUNTRY_CHANGED_VIA_MAP_ACTION = 'SELECTED_COUNTRY_CHANGED_VIA_MAP_ACTION';
+export class SelectedCountryChangedViaMapAction implements Action {
+  readonly type = SELECTED_COUNTRY_CHANGED_VIA_MAP_ACTION;
+  constructor(public payload?: string) {
+  }
+}

@@ -4,8 +4,10 @@
 
 export  interface UiState {
   currentCountry: number;
+  selectedCountry: string;
 };
 
 export const INITIAL_UI_STATE: UiState = {
-  currentCountry: undefined
+  currentCountry: undefined,
+  selectedCountry: undefined
 };

@@ -1,23 +1,9 @@
-.orangeClass {
-  fill : orange
-}
-
-.orangeClass:hover{
-  fill : pink
-}
-
-#es:hover{
-  fill : pink
-}
-
-#gb:hover{
-  fill : pink
-}
-
 path:hover {
-  fill : green
+  fill : green;
 }
 
-tr:nth-child(even) {
-  background-color: lightgray;
+.isSelected
+{
+  stroke: purple;
+  fill: purple;
 }

@@ -1,5 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {IMapItem} from '../model/iMapItem';
+import {ApplicationState} from "../store/applicationState";
+import {Store} from "@ngrx/store";
 
 @Component({
   selector: 'app-map',
@@ -15,6 +17,12 @@ export class MapComponent implements OnInit {
   @Input()
   mapItemsForRussia: IMapItem[];
 
+  @Input()
+  selectedCountry: string;
+
+  @Output()
+  countrySelected = new EventEmitter<string>();
+
   constructor() { }
 
   ngOnInit() {
@@ -26,6 +34,11 @@ export class MapComponent implements OnInit {
   mouseOut(event) {
   }
 
-  mouseClick(event) {
+  mouseClick(country: any) {
+    if(country.currentTarget.localName === 'path') {
+      //console.log('node name =' + country.currentTarget.localName);
+      //console.log('Path clicked ' + country.currentTarget.id);
+      this.countrySelected.next(country.currentTarget.id);
+    }
   }
 }

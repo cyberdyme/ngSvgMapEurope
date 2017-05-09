@@ -13,15 +13,17 @@ import {LoadCountriesEffect} from './store/effects/loadcountries.effect';
 import { MapContainerComponent } from './components/map-container.component';
 import { MapComponent } from './components/map.component';
 import { HeaderComponent } from './components/header.component';
-import {PanelModule, TabViewModule} from 'primeng/primeng';
+import {DropdownModule, PanelModule, TabViewModule} from 'primeng/primeng';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { SelectCountryInfoComponent } from './components/select-country-info.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MapContainerComponent,
     MapComponent,
-    HeaderComponent
+    HeaderComponent,
+    SelectCountryInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     EffectsModule.run(LoadCountriesEffect),
     BrowserAnimationsModule,
     TabViewModule,
-    PanelModule
+    PanelModule,
+    DropdownModule
   ],
   providers: [],
   bootstrap: [AppComponent]

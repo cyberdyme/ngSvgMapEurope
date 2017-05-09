@@ -45,13 +45,16 @@
   </defs>
   <rect y="162.74684" x="-340.6582" height="7934.9712" width="12386.153" id="ocean"/>
   <path *ngFor="let country of mapItemsForEurope"
+        [ngClass]="{isSelected: selectedCountry === country.id}"
         [attr.id]="country.id"
-        [attr.d]="country.data" />
+        [attr.d]="country.data"
+        [attr.text]="country.id"
+        (click)="mouseClick($event)" />
 
   <g transform="matrix(1.43317, 0, 0, 1.43317, -2435.49, -1086.58)" class="nationGroup">
     <path *ngFor="let country of mapItemsForRussia"
+          [ngClass]="{isSelected: selectedCountry === country.id}"
           [attr.id]="country.id"
           [attr.d]="country.data" />
   </g>
-
 </svg>

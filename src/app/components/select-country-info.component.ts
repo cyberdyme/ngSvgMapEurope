@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ApplicationState} from '../store/applicationState';
 import {Store} from '@ngrx/store';
 import {Observable} from 'rxjs/Observable';
@@ -7,25 +7,30 @@ import * as  _ from 'lodash';
 import {SelectItem} from 'primeng/primeng';
 import {IMapItem} from '../model/iMapItem';
 import {SelectedCountryChangedViaMapAction} from '../store/actions/loadAllMapItemsAction';
+import {Subscription} from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-select-country-info',
   templateUrl: './select-country-info.component.html',
   styleUrls: ['./select-country-info.component.scss']
 })
-export class SelectCountryInfoComponent implements OnInit {
+export class SelectCountryInfoComponent implements OnInit, OnDestroy {
   countries$: Observable<SelectItem[]>;
   selectedCountry$: Observable<IMapItem>;
   selectedCity: IMapItem;
+  selectedCitySubscription: Subscription;
 
   constructor(private store: Store<ApplicationState>) { }
 
   ngOnInit() {
     this.countries$ = this.store.select(x => _.concat(this.getBlankItemLabel(), this.getCountries(x)));
     this.selectedCountry$ = this.store.select(x => x.dataStore.countries[x.uiState.selectedCountry]);
-    this.selectedCountry$.subscribe(y => {
+    this.selectedCitySubscription = this.selectedCountry$.subscribe(y => {
       this.selectedCity = y;
     });
+  }
+  ngOnDestroy(): void {
+    this.selectedCitySubscription.unsubscribe();
   }
 
   getCountries(state: ApplicationState) {

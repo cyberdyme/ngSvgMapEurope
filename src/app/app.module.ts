@@ -1,6 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 
 import {AppComponent} from './app.component';
@@ -17,6 +17,7 @@ import {DropdownModule, PanelModule, TabViewModule} from 'primeng/primeng';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { SelectCountryInfoComponent } from './components/select-country-info.component';
 import { CurrentSelectionComponent } from './components/current-selection.component';
+import { SelectdCountryFormComponent } from './components/selectd-country-form.component';
 
 @NgModule({
   declarations: [
@@ -25,12 +26,14 @@ import { CurrentSelectionComponent } from './components/current-selection.compon
     MapComponent,
     HeaderComponent,
     SelectCountryInfoComponent,
-    CurrentSelectionComponent
+    CurrentSelectionComponent,
+    SelectdCountryFormComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
     HttpModule,
+    FormsModule,
+    ReactiveFormsModule,
     SharedServiceModule.forRoot(),
     StoreModule.provideStore(storeReducer, INITIAL_APPLICATION_STATE),
     EffectsModule.run(LoadCountriesEffect),

@@ -1,0 +1,31 @@
+form label {
+  width: 100px;
+  display: inline-block;
+  text-align: right;
+  vertical-align: top;
+  margin-right: 5px;
+}
+
+form fieldset {
+  margin-bottom: 20px;
+}
+
+form textarea {
+  width: 170px;
+}
+
+form input[type='radio'] {
+  box-shadow: none;
+  width: 20px;
+  vertical-align: bottom;
+  margin-left: 10px;
+}
+
+.ng-dirty.ng-invalid {
+  border: 2px solid #ff2118;
+}
+
+form.ng-dirty.ng-invalid {
+  border:none;
+}
+
